@@ -1,6 +1,6 @@
 # NLP Project: e-SNLI -> GMEG-EXP LLM-Likeness Shift
 
-This repository implements the full project pipeline:
+This repository implements the full project pipeline in Jupyter notebooks:
 1. Build old-human set from e-SNLI
 2. Generate synthetic old-LLM explanations on matched e-SNLI inputs
 3. Train TF-IDF + Logistic Regression detector (human vs LLM style)
@@ -32,26 +32,23 @@ export OPENAI_API_KEY="your_key_here"
 data/raw/GMEG-EXP
 ```
 
-The loader recursively scans CSV/JSON/JSONL and tries to detect explanation and human/source columns. If your column names differ, edit `src/data_utils.py`.
-
-## Run End-to-End
-
-```bash
-python run_pipeline.py --gmeg-root data/raw/GMEG-EXP --generate-llm
-```
-
-If you already generated synthetic e-SNLI LLM explanations once, rerun without regeneration:
-
-```bash
-python run_pipeline.py --gmeg-root data/raw/GMEG-EXP
-```
+The notebook loader recursively scans CSV/JSON/JSONL and tries to detect explanation and human/source columns. If your column names differ, edit the corresponding loading cell in the notebook.
 
 ## Notebook
 
-Use:
+Run this notebook end-to-end:
 
 - `notebooks/full_project_pipeline.ipynb`
-- `project_steps.ipynb` (step-name-only notebook)
+
+Optional reference notebook:
+
+- `project_steps.ipynb` (step-name-only)
+
+Inside `notebooks/full_project_pipeline.ipynb`:
+1. Set `GMEG_ROOT = Path("data/raw/GMEG-EXP")`
+2. Set `GENERATE_LLM = True` for first run
+3. Run all cells from top to bottom
+4. Set `GENERATE_LLM = False` on later runs if cached synthetic e-SNLI outputs already exist
 
 ## Outputs
 
