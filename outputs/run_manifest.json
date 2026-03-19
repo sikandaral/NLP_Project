@@ -1,17 +1,17 @@
 {
   "main_metrics": {
     "f1": 1.0,
-    "auroc": 0.9999999999999999
+    "auroc": 1.0
   },
   "style_metrics": {
-    "f1": 0.9852569243106533,
-    "auroc": 0.9932365781250001
+    "f1": 0.9858094768015795,
+    "auroc": 0.9937819921875
   },
   "length_metrics": {
-    "f1": 1.0,
+    "f1": 0.9999240179317681,
     "auroc": 1.0,
-    "n_train_len": 13537,
-    "n_eval_len": 13801,
+    "n_train_len": 13557,
+    "n_eval_len": 13803,
     "length_lo": 7.0,
     "length_hi": 39.0
   },

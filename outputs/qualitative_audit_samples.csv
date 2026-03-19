@@ -1,41 +1,41 @@
 explanation,group,llm_likeness,bucket
-The response is relevant and consistent with the facts in the document.,new_human,0.9993214673450488,high_score
-The response is relevant and consistent with the facts in the document.,new_human,0.9993214673450488,high_score
-The response is accurate and supported by the document.,new_human,0.998912552381741,high_score
-The response is reasonable and supported by the facts in the document.,new_human,0.9985892184056652,high_score
-The oppression and hardship endured by the Ukrainians is explained.,new_human,0.9944957802305199,high_score
-The response is accurate and supported by facts in the document.,new_human,0.9922920275103745,high_score
-The document does cite the 1960s.,new_human,0.986901539398746,high_score
-The robotic submarine is autonomous.,new_human,0.9626652983758269,high_score
-The response is accurate,new_human,0.9626652983758269,high_score
-The answer is relevant and consistent with the document,new_human,0.9602698652206982,high_score
-The answer is reasonable and consistent with the document.,new_human,0.9602698652206982,high_score
-The response is accurate and consistent with the article.,new_human,0.9545657058679246,high_score
-The response is accurate and consistent with the article.,new_human,0.9545657058679246,high_score
-The response is correct and supported by the passage.,new_human,0.9319189431193602,high_score
-The response is correct and supported by the passage.,new_human,0.9319189431193602,high_score
-The response is correct and supported by the passage.,new_human,0.9319189431193602,high_score
-The response is correct and supported by the document.,new_human,0.9319189431193602,high_score
-"The answer is accurate and relevant, and is consistent with the document.",new_human,0.9275049224299388,high_score
-"The answer is supported by the info in sentences 1, 3, and 7.",new_human,0.9242900551204696,high_score
-"The answer is speculation, but is supported by the text",new_human,0.920055413816546,high_score
-He si considered controversial because he should not be involved in book publishing,new_human,0.006099897336845568,low_score
-Food cannot be transported to civilians.,new_human,0.006683357746912687,low_score
-Sentence 8 confirms how they will be protected,new_human,0.0067058306761281425,low_score
-Sentence 6 explains how they are behaving like suicide squads.,new_human,0.007046236692795779,low_score
-They answer should be they will NOT suspect.,new_human,0.007086404739132485,low_score
-Any further detail would be superfluous,new_human,0.007167387539613913,low_score
-Sentence 6 mentions Haruko Toyama,new_human,0.007464139677695146,low_score
-It can be assumed from sentence 3 that he gave up politics because he was already getting too old.,new_human,0.007525046205286037,low_score
-Sonar is how objects are found in places they cannot be seen.,new_human,0.00800692220270904,low_score
-Any more detail would be unnecessary,new_human,0.00836301179613992,low_score
-Correct. We are not told how they survived.,new_human,0.008421493262550078,low_score
-It can be assumed from sentence 4 that he gave up on politics because he was getting too old.,new_human,0.008723434608836775,low_score
-Sentence 5 says medical monitoring should be done.,new_human,0.008861194981670071,low_score
-They are becoming more aggressive because their government backs them.,new_human,0.009216791817584419,low_score
-Things are not normalizing.,new_human,0.009593072733359298,low_score
-A protective atmosphere would also be necessary for life.,new_human,0.009637934120861561,low_score
-A protective atmosphere would also be necessary for life.,new_human,0.009637934120861561,low_score
-"It is not clear if the season can be saved. Sentence 8 says even if all demands accepted, it remains uncertain. The answer is therefore not correct in its suggestions.",new_human,0.009733470322007555,low_score
-Sentence 1 mentions why he is Britain's most celebrated living artist,new_human,0.009892020705255921,low_score
-The machine response can be inferred from sentence 1-3.,new_human,0.010062507777247546,low_score
+The response is accurate and consistent with the article.,new_human,0.9997694695988035,high_score
+The response is accurate and consistent with the article.,new_human,0.9997694695988035,high_score
+The response is relevant and consistent with the facts in the document.,new_human,0.9995142736848553,high_score
+The response is relevant and consistent with the facts in the document.,new_human,0.9995142736848553,high_score
+The response is accurate and supported by the document.,new_human,0.9993235494346239,high_score
+The response is reasonable and supported by the facts in the document.,new_human,0.9990496945483155,high_score
+The oppression and hardship endured by the Ukrainians is explained.,new_human,0.9961929355736148,high_score
+The response is accurate and supported by facts in the document.,new_human,0.9943005533456472,high_score
+The document does cite the 1960s.,new_human,0.9895573670871552,high_score
+The government wanted to terrorize the citizens and opposition in Aleppo.,new_human,0.9852942678335379,high_score
+The response is not supported by the article.,new_human,0.983645035164385,high_score
+The response is not supported by the article.,new_human,0.983645035164385,high_score
+The response appears relevant and consistent with the article facts,new_human,0.9809756353576047,high_score
+The robotic submarine is autonomous.,new_human,0.9742175297713643,high_score
+The response is accurate,new_human,0.9742175297713643,high_score
+The answer is relevant and consistent with the document,new_human,0.9641996334465341,high_score
+The answer is reasonable and consistent with the document.,new_human,0.9641996334465341,high_score
+"The response is relevant and fairly complete, consistent with the article",new_human,0.9632200122051202,high_score
+The United States,new_human,0.9526110341432776,high_score
+The response is correct and consistent with the article,new_human,0.9525520029585476,high_score
+Sentence 8 confirms how they will be protected,new_human,0.0055536051199241605,low_score
+He si considered controversial because he should not be involved in book publishing,new_human,0.005592263056202366,low_score
+They answer should be they will NOT suspect.,new_human,0.006041827345490135,low_score
+Any further detail would be superfluous,new_human,0.006140832766780426,low_score
+Sentence 6 mentions Haruko Toyama,new_human,0.00652124637672987,low_score
+It can be assumed from sentence 3 that he gave up politics because he was already getting too old.,new_human,0.006602826374031215,low_score
+Sentence 6 explains how they are behaving like suicide squads.,new_human,0.006947966649990624,low_score
+Food cannot be transported to civilians.,new_human,0.006982645928366436,low_score
+Sonar is how objects are found in places they cannot be seen.,new_human,0.007074942671068068,low_score
+Any more detail would be unnecessary,new_human,0.007198111150210145,low_score
+Correct. We are not told how they survived.,new_human,0.0072784940048175265,low_score
+It can be assumed from sentence 4 that he gave up on politics because he was getting too old.,new_human,0.007636115215897699,low_score
+Sentence 5 says medical monitoring should be done.,new_human,0.0077563983944251205,low_score
+The unfinished business can be deduced from sentence 8.,new_human,0.008301690945002303,low_score
+They are becoming more aggressive because their government backs them.,new_human,0.008346605999365436,low_score
+Correct. Information can be found in #5 through #8.,new_human,0.008453662194076651,low_score
+Things are not normalizing.,new_human,0.008829889708858722,low_score
+The machine response can be inferred from sentence 1-3.,new_human,0.008904548345727669,low_score
+The machine response can be inferred from sentence 1.,new_human,0.008904548345727669,low_score
+"Politicians are not doing what they are suppose to do, they are paying the money as they should",new_human,0.009050315405857783,low_score

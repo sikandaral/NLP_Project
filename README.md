@@ -39,6 +39,10 @@ pip install -r requirements.txt
 - Expected columns:
   - required: `explanation`
   - recommended: `premise`, `hypothesis`, `label`
+- Alignment policy:
+  - the notebook now enforces strict `premise+hypothesis` alignment by default
+  - if files are misaligned, execution fails with an explicit error
+  - regenerate LLM explanations from the exact current subset if needed
 
 ### EBR Target Dataset
 - Preferred local CSV: `data/raw/ebr_feedback.csv`
@@ -46,6 +50,7 @@ pip install -r requirements.txt
   - `data/raw/ebr_train.csv`
   - `data/raw/ebr_test.csv`
 - If local EBR CSV is missing, notebook can load from Hugging Face (`wadhma/EBR`) if network access is available.
+- In the EBR caching cell, `DOWNLOAD_EBR_IF_MISSING=False` by default for offline-safe runs.
 
 ## Notebook
 
@@ -57,6 +62,7 @@ Notes:
 1. By default, subset rebuilding is skipped if subset CSVs already exist (to preserve alignment with LLM CSV files).
 2. Set `FORCE_REBUILD_SUBSETS = True` only if you also regenerate matching LLM explanation CSVs.
 3. The notebook uses `feedback` as the EBR explanation field.
+4. Held-out evaluation is strict: both e-SNLI test human and e-SNLI test LLM files are required.
 
 ## Outputs
 
