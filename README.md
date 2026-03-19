@@ -1,13 +1,17 @@
-# NLP Project: e-SNLI -> GMEG-EXP LLM-Likeness Shift
+# NLP Project: e-SNLI -> EBR LLM-Likeness Shift
 
-This repository implements the full project pipeline in Jupyter notebooks:
-1. Build old-human set from e-SNLI
-2. Generate synthetic old-LLM explanations on matched e-SNLI inputs
-3. Train TF-IDF + Logistic Regression detector (human vs LLM style)
-4. Run length-matched and style-only controls
-5. Load GMEG-EXP human explanations
-6. Score old-human, old-LLM, and new-human explanations
-7. Compare distributions, export plots, and run qualitative audit samples
+This project trains an explanation-style detector on older e-SNLI explanations, then applies it to newer EBR human feedback to measure how LLM-like the language appears.
+
+## Pipeline Summary
+1. Load and inspect e-SNLI train/test.
+2. Build balanced e-SNLI subsets (`old-human`).
+3. Load synthetic e-SNLI LLM explanations (`old-LLM`) from CSV.
+4. Train a main TF-IDF + Logistic Regression detector.
+5. Evaluate on held-out e-SNLI split (F1, AUROC).
+6. Run style-only and length-matched controls.
+7. Load EBR and use `feedback` as explanation text (`new-human`).
+8. Score `old-human`, `old-LLM`, and `new-human`.
+9. Export summaries, figures, qualitative audit, and reports.
 
 ## Setup
 
@@ -17,47 +21,58 @@ source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
-Set API key for synthetic explanation generation:
+## Data Requirements
 
-```bash
-export OPENAI_API_KEY="your_key_here"
-```
+### e-SNLI
+- Loaded via `datasets.load_dataset("esnli")` in the notebook.
+- Balanced subset files are saved/used at:
+  - `data/raw/esnli_subset.csv` (train subset)
+  - `data/raw/esnli_test_subset.csv` (test subset)
 
-## Data
+### Synthetic e-SNLI LLM Explanations
+- These are **pre-generated** and loaded from CSV (no API generation in notebook).
+- Provenance: generated in a prior step using an OpenAI LLM.
+- Expected files:
+  - `data/raw/esnli_llm_explanations_train.csv`
+  - `data/raw/esnli_llm_explanations_test.csv`
+  - optional fallback: `data/raw/esnli_llm_explanations.csv`
+- Expected columns:
+  - required: `explanation`
+  - recommended: `premise`, `hypothesis`, `label`
 
-- e-SNLI is loaded automatically using `datasets.load_dataset("esnli")`.
-- Put GMEG-EXP under:
-
-```bash
-data/raw/GMEG-EXP
-```
-
-The notebook loader recursively scans CSV/JSON/JSONL and tries to detect explanation and human/source columns. If your column names differ, edit the corresponding loading cell in the notebook.
+### EBR Target Dataset
+- Preferred local CSV: `data/raw/ebr_feedback.csv`
+- Optional split files:
+  - `data/raw/ebr_train.csv`
+  - `data/raw/ebr_test.csv`
+- If local EBR CSV is missing, notebook can load from Hugging Face (`wadhma/EBR`) if network access is available.
 
 ## Notebook
 
-Run this notebook end-to-end:
+Run end-to-end:
 
 - `notebooks/full_project_pipeline.ipynb`
 
-Optional reference notebook:
-
-- `project_steps.ipynb` (step-name-only)
-
-Inside `notebooks/full_project_pipeline.ipynb`:
-1. Set `GMEG_ROOT = Path("data/raw/GMEG-EXP")`
-2. Set `GENERATE_LLM = True` for first run
-3. Run all cells from top to bottom
-4. Set `GENERATE_LLM = False` on later runs if cached synthetic e-SNLI outputs already exist
+Notes:
+1. By default, subset rebuilding is skipped if subset CSVs already exist (to preserve alignment with LLM CSV files).
+2. Set `FORCE_REBUILD_SUBSETS = True` only if you also regenerate matching LLM explanation CSVs.
+3. The notebook uses `feedback` as the EBR explanation field.
 
 ## Outputs
 
-Pipeline artifacts are written to `outputs/`:
+Artifacts are written to `outputs/`:
 
-- `outputs/scored_explanations.csv`
-- `outputs/score_summary.csv`
+- `outputs/scored_explanations_main.csv`
+- `outputs/scored_explanations_style_only.csv`
+- `outputs/scored_explanations_length_matched.csv`
+- `outputs/score_summary_main.csv`
+- `outputs/score_summary_style_only.csv`
+- `outputs/score_summary_length_matched.csv`
 - `outputs/qualitative_audit_samples.csv`
-- `outputs/models/esnli_llm_detector.joblib`
-- `outputs/figures/llm_likeness_distributions.png`
+- `outputs/models/explanation_style_models.joblib`
+- `outputs/figures/llm_likeness_distributions_main.png`
+- `outputs/figures/llm_likeness_distributions_style_only.png`
+- `outputs/figures/llm_likeness_distributions_length_matched.png`
 - `outputs/reports/final_report.md`
+- `outputs/reports/qualitative_pattern_summary.md`
 - `outputs/run_manifest.json`
