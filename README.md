@@ -24,7 +24,8 @@ pip install -r requirements.txt
 ## Data Requirements
 
 ### e-SNLI
-- Loaded via `datasets.load_dataset("esnli")` in the notebook.
+- Offline-safe behavior: the notebook first checks for existing subset CSVs in `data/raw`.
+- Hugging Face `datasets.load_dataset("esnli")` is called only when subset CSVs are missing and a rebuild is required.
 - Balanced subset files are saved/used at:
   - `data/raw/esnli_subset.csv` (train subset)
   - `data/raw/esnli_test_subset.csv` (test subset)
@@ -43,6 +44,10 @@ pip install -r requirements.txt
   - the notebook now enforces strict `premise+hypothesis` alignment by default
   - if files are misaligned, execution fails with an explicit error
   - regenerate LLM explanations from the exact current subset if needed
+- Loading priority:
+  - `data/processed/esnli_old_llm_train.csv` and `data/processed/esnli_old_llm_test.csv` are used first when present
+  - otherwise the notebook loads from `data/raw/...` and writes aligned caches back to `data/processed/...`
+  - strict alignment checks are enforced when loading from `data/raw`
 
 ### EBR Target Dataset
 - Preferred local CSV: `data/raw/ebr_feedback.csv`
@@ -63,6 +68,7 @@ Notes:
 2. Set `FORCE_REBUILD_SUBSETS = True` only if you also regenerate matching LLM explanation CSVs.
 3. The notebook uses `feedback` as the EBR explanation field.
 4. Held-out evaluation is strict: both e-SNLI test human and e-SNLI test LLM files are required.
+5. Length-matched control now includes minimum per-class count guards after filtering; the run fails fast if filtered class counts are too small.
 
 ## Outputs
 
