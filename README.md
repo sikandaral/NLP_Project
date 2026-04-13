@@ -25,7 +25,7 @@ pip install -r requirements.txt
 
 ### e-SNLI
 - Offline-safe behavior: the notebook first checks for existing subset CSVs in `data/raw`.
-- Hugging Face `datasets.load_dataset("esnli")` is called only when subset CSVs are missing and a rebuild is required.
+- Hugging Face `datasets.load_dataset("esnli", trust_remote_code=True)` is called only when subset CSVs are missing and a rebuild is required.
 - Balanced subset files are saved/used at:
   - `data/raw/esnli_subset.csv` (train subset)
   - `data/raw/esnli_test_subset.csv` (test subset)
@@ -54,6 +54,7 @@ pip install -r requirements.txt
 - Optional split files:
   - `data/raw/ebr_train.csv`
   - `data/raw/ebr_test.csv`
+- The notebook uses the `train` and `test` splits and treats `feedback` as the newer human explanation text.
 - If local EBR CSV is missing, notebook can load from Hugging Face (`wadhma/EBR`) if network access is available.
 - In the EBR caching cell, `DOWNLOAD_EBR_IF_MISSING=False` by default for offline-safe runs.
 
@@ -74,17 +75,22 @@ Notes:
 
 Artifacts are written to `outputs/`:
 
-- `outputs/scored_explanations_main.csv`
-- `outputs/scored_explanations_style_only.csv`
-- `outputs/scored_explanations_length_matched.csv`
+- `outputs/scores_main.csv`
+- `outputs/scores_style_only.csv`
+- `outputs/scores_length_matched.csv`
 - `outputs/score_summary_main.csv`
 - `outputs/score_summary_style_only.csv`
 - `outputs/score_summary_length_matched.csv`
-- `outputs/qualitative_audit_samples.csv`
-- `outputs/models/explanation_style_models.joblib`
+- `outputs/length_matched_bin_summary.csv`
+- `outputs/leakage_shortcut_diagnostics.json`
+- `outputs/robustness_subset_results.csv`
+- `outputs/robustness_subset_summary.csv`
+- `outputs/top_detector_features.csv`
+- `outputs/top_detector_features_comparison.csv`
+- `outputs/models/detector_bundle.joblib`
 - `outputs/figures/llm_likeness_distributions_main.png`
 - `outputs/figures/llm_likeness_distributions_style_only.png`
 - `outputs/figures/llm_likeness_distributions_length_matched.png`
+- `outputs/reports/ebr_qualitative_audit.csv`
 - `outputs/reports/final_report.md`
-- `outputs/reports/qualitative_pattern_summary.md`
 - `outputs/run_manifest.json`
