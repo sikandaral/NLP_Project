@@ -1,34 +1,86 @@
 {
-  "main_metrics": {
-    "f1": 1.0,
-    "auroc": 1.0
-  },
-  "style_metrics": {
-    "f1": 0.9858094768015795,
-    "auroc": 0.9937819921875
-  },
-  "length_metrics": {
-    "f1": 0.9999240179317681,
-    "auroc": 1.0,
-    "n_train_len": 13557,
-    "n_eval_len": 13803,
-    "length_lo": 7.0,
-    "length_hi": 39.0
-  },
-  "target_dataset": "wadhma/EBR",
   "files": {
-    "scored_main": "/Users/sikandarali/Documents/NLP_Project/outputs/scored_explanations_main.csv",
-    "scored_style": "/Users/sikandarali/Documents/NLP_Project/outputs/scored_explanations_style_only.csv",
-    "scored_length": "/Users/sikandarali/Documents/NLP_Project/outputs/scored_explanations_length_matched.csv",
+    "scores_main": "/Users/sikandarali/Documents/NLP_Project/outputs/scores_main.csv",
+    "scores_style_only": "/Users/sikandarali/Documents/NLP_Project/outputs/scores_style_only.csv",
+    "scores_length_matched": "/Users/sikandarali/Documents/NLP_Project/outputs/scores_length_matched.csv",
     "summary_main": "/Users/sikandarali/Documents/NLP_Project/outputs/score_summary_main.csv",
-    "summary_style": "/Users/sikandarali/Documents/NLP_Project/outputs/score_summary_style_only.csv",
-    "summary_length": "/Users/sikandarali/Documents/NLP_Project/outputs/score_summary_length_matched.csv",
-    "audit_csv": "/Users/sikandarali/Documents/NLP_Project/outputs/qualitative_audit_samples.csv",
-    "pattern_report": "/Users/sikandarali/Documents/NLP_Project/outputs/reports/qualitative_pattern_summary.md",
-    "model_bundle": "/Users/sikandarali/Documents/NLP_Project/outputs/models/explanation_style_models.joblib",
-    "figure_main": "/Users/sikandarali/Documents/NLP_Project/outputs/figures/llm_likeness_distributions_main.png",
-    "figure_style": "/Users/sikandarali/Documents/NLP_Project/outputs/figures/llm_likeness_distributions_style_only.png",
-    "figure_length": "/Users/sikandarali/Documents/NLP_Project/outputs/figures/llm_likeness_distributions_length_matched.png",
-    "final_report": "/Users/sikandarali/Documents/NLP_Project/outputs/reports/final_report.md"
+    "summary_style_only": "/Users/sikandarali/Documents/NLP_Project/outputs/score_summary_style_only.csv",
+    "summary_length_matched": "/Users/sikandarali/Documents/NLP_Project/outputs/score_summary_length_matched.csv",
+    "length_matched_bin_summary": "/Users/sikandarali/Documents/NLP_Project/outputs/length_matched_bin_summary.csv",
+    "qualitative_audit": "/Users/sikandarali/Documents/NLP_Project/outputs/reports/ebr_qualitative_audit.csv",
+    "detector_bundle": "/Users/sikandarali/Documents/NLP_Project/outputs/models/detector_bundle.joblib",
+    "main_hist": "/Users/sikandarali/Documents/NLP_Project/outputs/figures/llm_likeness_distributions_main.png",
+    "style_hist": "/Users/sikandarali/Documents/NLP_Project/outputs/figures/llm_likeness_distributions_style_only.png",
+    "length_hist": "/Users/sikandarali/Documents/NLP_Project/outputs/figures/llm_likeness_distributions_length_matched.png",
+    "report": "/Users/sikandarali/Documents/NLP_Project/outputs/reports/final_report.md",
+    "robustness_results": "/Users/sikandarali/Documents/NLP_Project/outputs/robustness_subset_results.csv",
+    "robustness_summary": "/Users/sikandarali/Documents/NLP_Project/outputs/robustness_subset_summary.csv",
+    "leakage_shortcut_diagnostics": "/Users/sikandarali/Documents/NLP_Project/outputs/leakage_shortcut_diagnostics.json",
+    "top_detector_features": "/Users/sikandarali/Documents/NLP_Project/outputs/top_detector_features.csv",
+    "top_detector_features_comparison": "/Users/sikandarali/Documents/NLP_Project/outputs/top_detector_features_comparison.csv"
+  },
+  "metrics": {
+    "main": {
+      "f1": 0.9246219140414849,
+      "auroc": 0.9732698593750001
+    },
+    "style_only": {
+      "f1": 0.6922304758080706,
+      "auroc": 0.7723055078125001
+    },
+    "length_matched": {
+      "f1": 0.9093808630393996,
+      "auroc": 0.9610580919756601,
+      "n_train_len": 10548,
+      "n_eval_len": 10008,
+      "train_match_summary": {
+        "matching_method": "token_length_binned_subsample",
+        "bin_width": 5,
+        "length_cap": 40,
+        "matched_bins": [
+          "01-05",
+          "06-10",
+          "11-15",
+          "16-20",
+          "21-25",
+          "26-30",
+          "31-35",
+          "36-40",
+          "41+"
+        ],
+        "human_count_before": 8000,
+        "llm_count_before": 8000,
+        "human_count_after": 5274,
+        "llm_count_after": 5274,
+        "human_mean_length_before": 12.5,
+        "llm_mean_length_before": 19.788625,
+        "human_mean_length_after": 13.427758816837315,
+        "llm_mean_length_after": 13.456389836935912
+      },
+      "eval_match_summary": {
+        "matching_method": "token_length_binned_subsample",
+        "bin_width": 5,
+        "length_cap": 40,
+        "matched_bins": [
+          "01-05",
+          "06-10",
+          "11-15",
+          "16-20",
+          "21-25",
+          "26-30",
+          "31-35",
+          "36-40",
+          "41+"
+        ],
+        "human_count_before": 8000,
+        "llm_count_before": 8000,
+        "human_count_after": 5004,
+        "llm_count_after": 5004,
+        "human_mean_length_before": 13.187625,
+        "llm_mean_length_before": 20.31725,
+        "human_mean_length_after": 14.125099920063949,
+        "llm_mean_length_after": 14.038768984812151
+      }
+    }
   }
 }

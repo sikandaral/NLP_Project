@@ -1,0 +1,12 @@
+{
+  "human_pair_overlap_train_eval": 0,
+  "llm_pair_overlap_train_eval": 0,
+  "human_exact_text_overlap_train_eval": 33,
+  "llm_exact_text_overlap_train_eval": 0,
+  "cross_class_exact_text_overlap_train": 0,
+  "cross_class_exact_text_overlap_eval": 0,
+  "human_clean_text_overlap_train_eval": 35,
+  "llm_clean_text_overlap_train_eval": 18,
+  "cross_class_clean_text_overlap_train": 0,
+  "cross_class_clean_text_overlap_eval": 1
+}

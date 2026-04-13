@@ -1,0 +1,41 @@
+direction,feature,weight
+llm_like,the,6.100537432156887
+llm_like,with,4.9018413768504985
+llm_like,the the,4.251192308786793
+llm_like,the with,4.11187340401575
+llm_like,the that,4.038497880868681
+llm_like,which the,3.916381131629836
+llm_like,in,3.7879283783240307
+llm_like,with the,3.6386118034263606
+llm_like,two,3.256831703161279
+llm_like,man is,3.0783776211957976
+llm_like,which,2.9407484529449963
+llm_like,some,2.8721566344818537
+llm_like,his,2.6428980220072567
+llm_like,man,2.642189912405061
+llm_like,on,2.6403803432850315
+llm_like,people are,2.424982348447071
+llm_like,person is,2.4055105643505965
+llm_like,group of,2.261640742163786
+llm_like,woman,2.2234957460918383
+llm_like,their,2.0926975019449885
+human_like,not,-13.367552680997292
+human_like,be,-10.14287556401364
+human_like,implies,-7.662631852205017
+human_like,or,-6.7474972864942835
+human_like,if,-6.546400091138773
+human_like,cannot,-6.432782705011055
+human_like,can,-6.291449030365576
+human_like,means,-6.268894087318594
+human_like,is,-5.756297441847284
+human_like,either,-5.503235299175026
+human_like,sentence,-5.4177458389916096
+human_like,doesn,-5.233161460858716
+human_like,same,-5.193184647343676
+human_like,different,-5.179186682467206
+human_like,mean,-4.635162602725023
+human_like,necessarily,-4.0942723619431325
+human_like,not all,-4.086365470820828
+human_like,both,-4.060385828149246
+human_like,the same,-3.997919637617726
+human_like,does not,-3.937920283175833
